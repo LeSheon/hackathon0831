@@ -15,6 +15,7 @@ newsOptions = {
       }
 }
 
+// Display News
 function displayNews(news) {
     const article = document.querySelector('.news');
 
@@ -33,12 +34,14 @@ function displayNews(news) {
     
 }
 
+// Display Fact
 function displayFact(fact) {
     const factText = document.querySelector('.facts__text');
     factText.classList.add('facts__text');
     factText.innerHTML = fact.fact;
 }
 
+// Helper function to pick 1 random article
 function randomArticle(length) {
     return Math.round(Math.random() * (length-2)+1);
 }
@@ -46,7 +49,7 @@ function randomArticle(length) {
 
 
 
-
+// Display 1 random news from article array when page is loded.
 axios.get(`${NEWS_API_URL}`, newsOptions).then(response => {
     displayNews(response.data[randomArticle(response.data.length)]);
 }).catch(e => {
@@ -54,7 +57,8 @@ axios.get(`${NEWS_API_URL}`, newsOptions).then(response => {
 })
 
 
-document.querySelector('.facts__button').addEventListener('click', evt => {
+// When Fact Button is pressed display random fact.
+document.querySelector('.facts__button').addEventListener('click', () => {
     axios.get(`${FACT_API_URL}limit=1`, factOptions).then(response => {
         displayFact(response.data[0]);
     }).catch(e => {
