@@ -5,12 +5,12 @@ const limit = 1;
 
 factOptions = { 
     headers: {
-        'X-Api-Key': 'xSUxVSqJIfSRWj+IY6taWg==3clVSI6MX17xoyQn'
+        'X-Api-Key': '[API-KEY]'
     }
 };
 newsOptions = {
     headers: {
-        'X-RapidAPI-Key': '2f341bdeedmsh659d794d3a283a0p19717ajsn3e389a0d0d2a',
+        'X-RapidAPI-Key': '[API-KEY]',
         'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
       }
 }
